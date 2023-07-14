@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     @State private var checkAmount = 0.0
     @State private var numberOfPeople = 2
@@ -74,6 +75,10 @@ struct ContentView: View {
                     Text(grandTotal, format: currencyFormatter)
                 } header: {
                     Text("Check Total")
+                        .padding(2)
+                        .foregroundColor($tipPercentage.wrappedValue < 10 ? Color.white : Color.black)
+                        .background($tipPercentage.wrappedValue < 10 ? Color.red : Color.clear)
+                        
                 }
             }
             .navigationTitle("WeSplit")
